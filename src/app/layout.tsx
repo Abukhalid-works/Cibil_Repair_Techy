@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { Manrope, Inter } from "next/font/google";
+import { SpeedInsights } from "@vercel/speed-insights/next";
+import { Analytics } from "@vercel/analytics/react";
 import "./globals.css";
 
 const manrope = Manrope({
@@ -53,6 +55,8 @@ export default function RootLayout({
     <html lang="en" className={`scroll-smooth dark ${manrope.variable} ${inter.variable}`}>
       <body className="bg-[#0b0f19] text-white font-sans antialiased selection:bg-indigo-600 selection:text-white min-h-screen">
         {children}
+        <SpeedInsights />
+        <Analytics />
       </body>
     </html>
   );
